@@ -1,4 +1,4 @@
-name: calculator-ci
+name: 'Sarah: Run calculator build and test?'
 
 on:
   push:
@@ -13,10 +13,12 @@ jobs:
 
     steps:
     - name: Clone repo
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: make
       run: 
         cd calculator
         make
     - name: run calculator
-      run: ./calculator 2 + 1
+      run: 
+        cd calculator
+        ./calculator 2 + 1
