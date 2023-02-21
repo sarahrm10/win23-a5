@@ -12,8 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Clone repo
     - uses: actions/checkout@v3
     - name: make
-      run: make
+      run: 
+        cd calculator
+        make
     - name: run calculator
       run: ./calculator 2 + 1
