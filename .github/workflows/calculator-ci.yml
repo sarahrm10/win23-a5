@@ -15,10 +15,10 @@ jobs:
     - name: Clone repo
       uses: actions/checkout@v3
     - name: make
-      run: 
+      run: |-
         cd calculator
         make
     - name: run calculator
-      run: 
+      run: |-
         cd calculator
         ./calculator 2 + 1
