@@ -13,13 +13,13 @@ echo "Invoke your program with the \$CALCULATOR variable; an example is below"
 
 # Test 01: Ensure multiplication works 
 if [[ $($CALCULATOR 4 '*' 2) -ne 8 ]]; then  # If the output of the program is not 8...
-  echo 'ERROR! A valid run of the calculator (1 + 1) failed to produce 2 as an output!'
+  echo 'ERROR! A valid run of the calculator (4 * 2) failed to produce 8 as an output!'
   exit 1
 fi
 
 # Test 02: Ensure program errors with not enough arguments
 if $CALCULATOR ; then  # If the return code of $PROGRAM is zero (i.e. success)...
-  echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
+    echo 'ERROR! An invalid run of the application (no arguments) apparently succeeded?!'
   exit 1
 fi
 
@@ -28,7 +28,7 @@ cd ..
 make clean && make
 # Test 03: Ensure the program runs without error with a simple, valid invocation.
 if ! $CALCULATOR 1 + 1; then  # If the return code of $PROGRAM is non-zero (i.e. error)...
-  echo 'ERROR! A valid run of the calculator (1 + 1) failed!'
+  echo 'ERROR! A valid run of the calculator (1 + 1) after make clean && make failed!'
   exit 1
 fi
 
